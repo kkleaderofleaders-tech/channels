@@ -1,7 +1,8 @@
 import logging
 import os
 
-from anthropic import Anthropic, APIError
+import anthropic
+from anthropic import Anthropic
 from dotenv import load_dotenv
 from telegram import Update
 from telegram.constants import ChatAction
@@ -17,7 +18,7 @@ load_dotenv()
 
 TELEGRAM_BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
-CLAUDE_MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-5")
+CLAUDE_MODEL = os.getenv("CLAUDE_MODEL", "claude-opus-5")
 MAX_HISTORY_MESSAGES = 20
 TELEGRAM_MESSAGE_LIMIT = 4096
 
@@ -57,18 +58,32 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
     try:
         response = anthropic_client.messages.create(
             model=CLAUDE_MODEL,
-            max_tokens=2048,
+            max_tokens=4096,
             messages=history,
         )
         reply_text = "".join(
             block.text for block in response.content if block.type == "text"
         )
-    except APIError:
+    except anthropic.RateLimitError:
+        logger.exception("Anthropic rate limit hit")
+        history.pop()
+        await update.message.reply_text(
+            "Hozir so'rovlar ko'p, birozdan so'ng qayta urinib ko'ring."
+        )
+        return
+    except anthropic.APIStatusError:
         logger.exception("Anthropic API request failed")
         history.pop()
         await update.message.reply_text(
             "Kechirasiz, Claude'ga so'rov yuborishda xatolik yuz berdi. "
             "Birozdan so'ng qayta urinib ko'ring."
+        )
+        return
+    except anthropic.APIConnectionError:
+        logger.exception("Network error while calling Anthropic API")
+        history.pop()
+        await update.message.reply_text(
+            "Tarmoq xatoligi yuz berdi, birozdan so'ng qayta urinib ko'ring."
         )
         return
 
