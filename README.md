@@ -28,7 +28,7 @@ GROQ_API_KEY=...
 GROQ_MODEL=llama-3.3-70b-versatile
 ```
 
-## Ishga tushirish
+## Ishga tushirish (lokal)
 
 ```bash
 python bot.py
@@ -36,3 +36,14 @@ python bot.py
 
 Botga Telegramda `/start` yuboring va suhbatni boshlang. Suhbat tarixini tozalash uchun
 `/reset` buyrug'idan foydalaning.
+
+## Railway'da joylashtirish (doimiy ishlab turishi uchun)
+
+1. https://railway.app ga GitHub akkountingiz bilan kiring.
+2. **New Project** -> **Deploy from GitHub repo** -> ushbu repositoriyani tanlang.
+3. Loyiha ochilgach, **Variables** bo'limiga o'ting va qo'shing:
+   - `TELEGRAM_BOT_TOKEN`
+   - `GROQ_API_KEY`
+   - `GROQ_MODEL` (ixtiyoriy, standart: `llama-3.3-70b-versatile`)
+4. Railway `Procfile`'ni o'qib, `python bot.py`ni avtomatik ishga tushiradi.
+5. **Deployments** bo'limidan loglarni kuzatib, "Bot ishga tushdi" xabarini ko'rgach botni Telegramda sinab ko'ring.
