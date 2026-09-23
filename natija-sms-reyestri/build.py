@@ -175,8 +175,8 @@ BLOCKS = [
   ('H-05', 'Hisobot topshirish eslatmasi', "Hurmatli xodim! {sana} gacha hisobotni Durbin tizimiga kiriting. %S", {}),
  ]),
  ('I', 'TABRIKLAR', 'Ota-ona', [
-  ('I-01', 'Bayram tabrigi (ota-ona)', "Hurmatli ota-onalar! {bayram} muborak bo'lsin. Oilangizga tinchlik, farzandlaringizga barokat tilaymiz. %S", {}),
-  ('I-02', "O'quv yili yakuni", "Hurmatli ota-onalar! O'quv yili muvaffaqiyatli yakunlandi. Hamkorligingiz uchun rahmat! %S", {}),
+  ('I-02', 'Bayram tabrigi (ota-ona)', "Hurmatli ota-onalar! {bayram} muborak bo'lsin. Oilangizga tinchlik, farzandlaringizga barokat tilaymiz. %S", {}),
+  ('I-04', "O'quv yili yakuni", "Hurmatli ota-onalar! O'quv yili muvaffaqiyatli yakunlandi. Hamkorligingiz uchun rahmat! %S", {}),
  ]),
  ('J', 'TIZIM VA TEXNIK XABARLAR', 'Ota-ona', [
   ('J-01', 'Durbin tizimida nosozlik', "Hurmatli ota-onalar! Durbin tizimida vaqtinchalik texnik nosozlik yuz berdi. Mutaxassislar ishlamoqda. Uzr so'raymiz. %S", {}),
