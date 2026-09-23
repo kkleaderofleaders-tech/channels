@@ -57,7 +57,7 @@ SAMPLE = {
     'ism': 'Diyorbek Rahimov', 'sinf': '5-A', 'oy': 'Mart', 'yil': '2026-2027',
     'sana': '10-mart', 'sana2': '14-mart', 'sana3': '16-mart', 'vaqt': '09:00',
     'summa': '3 500 000', 'foiz': '15', 'son': '3', 'daqiqa': '20', 'ball': '86',
-    'tel': TEL_MAIN, 'tel2': TEL_BUX, 'kod': '4821', 'raqam': '1057', 'muddat': '24 soat',
+    'tel': TEL_MAIN, 'tel2': TEL_DIR, 'kod': '4821', 'raqam': '1057', 'muddat': '24 soat',
     'fan': 'Matematika', 'chorak': '3-chorak', 'bayram': "Navro'z bayrami",
     'tanlov': 'BOND olimpiadasi', 'imtihon': 'IELTS', 'orin': "1-o'rin", 'natija': '7.0',
     'yutuq': 'faolligi va odobi', 'mavzu': 'Bolada diqqat sustligi',
@@ -96,12 +96,12 @@ D = TEL_DIR
 
 BLOCKS = [
  ('A', "TO'LOV VA MOLIYA", 'Ota-ona', [
-  ('A-01', "Oy boshi to'lov eslatmasi", "Hurmatli ota-ona! {oy} oyi to'lovi {sana} gacha to'lanishi so'raladi. Summa: {summa} so'm. Aloqa: {tel}. %S", {'tel': B}),
+  ('A-01', "Oy boshi to'lov eslatmasi", "Hurmatli ota-ona! {oy} oyi to'lovi {sana} gacha to'lanishi so'raladi. Summa: {summa} so'm. Aloqa: {tel}. %S", {}),
   ('A-02', "To'lov muddati bugun tugaydi", "Hurmatli ota-ona! {ism} uchun to'lov muddati bugun tugaydi. Summa: {summa} so'm. Iltimos, bugun to'lang. %S", {}),
   ('A-03', "Kechikkan to'lov (takroriy)", "Hurmatli ota-ona! {ism} bo'yicha {summa} so'm qarzdorlik mavjud. Buxgalteriya: {tel}. %S", {'tel': B}),
   ('A-04', "To'lov qabul qilindi (tasdiq)", "Hurmatli ota-ona! {summa} so'm to'lovingiz qabul qilindi. Rahmat! Balans Durbin tizimida. %S", {}),
   ('A-05', "Chegirma qo'llandi", "Hurmatli ota-ona! {ism} uchun {foiz}% chegirma qo'llandi. Yangi summa: {summa} so'm. %S", {}),
-  ('A-06', "Ortiqcha to'lov qaytarildi", "Hurmatli ota-ona! Ortiqcha to'lov {summa} so'm qaytarildi. Savollar: {tel}. %S", {'tel': B}),
+  ('A-06', "Ortiqcha to'lov qaytarildi", "Hurmatli ota-ona! Ortiqcha to'lov {summa} so'm qaytarildi. Savollar: {tel}. %S", {}),
   ('A-07', "Yangi o'quv yili shartnomasi", "Hurmatli ota-ona! {yil} o'quv yili shartnomasi tayyor. Imzolash uchun murojaat qiling: {tel}. %S", {}),
   ('A-08', 'Shartnoma imzolash eslatmasi', "Hurmatli ota-ona! Shartnoma imzolash muddati {sana} gacha. Joyingiz saqlanmoqda. Aloqa: {tel}. %S", {}),
  ]),
@@ -383,8 +383,8 @@ def body_html():
 
     contacts = [
         ('Maktab (asosiy)', TEL_MAIN, 'Umumiy aloqa, {tel}'),
-        ('Buxgalteriya', TEL_BUX, "To'lov masalalari: A-01, A-03, A-06"),
-        ('Maktab direktori', TEL_DIR, 'B-03, D-03'),
+        ('Buxgalteriya', TEL_BUX, 'A-03'),
+        ('Maktab direktori', TEL_DIR, 'B-03, D-03, J-04'),
         ('Telegram kanal', TG, '{kanal}, {havola}'),
     ]
     cc = ''.join(f'<div><div class="l">{P(l)}</div><div class="v">{esc(v)}</div><div class="u">{P(u)}</div></div>' for l, v, u in contacts)
