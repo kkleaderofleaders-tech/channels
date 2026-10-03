@@ -173,3 +173,27 @@ td.subject { font-weight: 500; }
 .closing__motto { font-size: 9pt; font-weight: 500; color: var(--ink-muted); }
 
 .avoid-break { break-inside: avoid; }
+
+/* ---------- Sinfdagi oʻrni (reyting) ---------- */
+.rank { display: grid; grid-template-columns: 58mm 1fr; gap: var(--space-5); align-items: start; }
+.rank__value { font-size: 34pt; line-height: 1; font-weight: 700; margin-top: var(--space-2); }
+.rank__value span { font-size: 14pt; font-weight: 500; color: #b4b4b4; }
+.rank__group {
+  display: inline-block; margin-top: var(--space-3); padding: 1px 6px; border-radius: var(--radius-sm);
+  background: var(--brand-white); color: var(--brand-black);
+  font-size: 7.5pt; font-weight: 500; letter-spacing: .04em; text-transform: uppercase;
+}
+.rank-strip { display: flex; flex-wrap: wrap; gap: 4px; margin-top: var(--space-2); }
+.rank-dot { width: 9px; height: 9px; border-radius: var(--radius-full); background: var(--border); }
+.rank-dot--me { background: var(--brand-red); outline: 1.5px solid var(--brand-red); outline-offset: 2px; }
+.rank-strip__legend { display: flex; justify-content: space-between; margin-top: 4px; }
+.rank__advice { margin-top: var(--space-3); padding: var(--space-3) var(--space-4); border-left: 3px solid var(--brand-red); background: var(--surface-raised); border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+.rank__advice b { color: var(--ink-brand); }
+
+/* ---------- Qobiliyatlar va kelajak ---------- */
+.abilities { display: grid; gap: var(--space-4); }
+.ability { display: flex; flex-direction: column; }
+.ability .card__title { font-size: 11.5pt; margin-bottom: var(--space-2); }
+.ability__basis { margin-bottom: var(--space-2); }
+.ability__contribution { font-size: 10pt; line-height: 1.5; }
+.ability__closing { margin-top: var(--space-4); font-size: 12pt; line-height: 1.45; font-weight: 700; color: var(--ink-brand); }

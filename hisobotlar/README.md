@@ -47,13 +47,31 @@ Majburiy faqat `davr` va `oquvchi`; qolgan boʻlimlar boʻlmasa, PDF'da chiqmayd
   "umumiy_xulosa": "3–5 gap",
   "fanlar": [
     { "fan": "Matematika", "ortacha": 4.64, "oldingi_oy": 4.8, "sinf_ortacha": 4.35,
-      "baholar_soni": 14, "izoh": "ixtiyoriy qisqa izoh" }
+      "baholar_soni": 14, "izoh": "ixtiyoriy qisqa izoh",
+      "orin": 15, "jami": 24 }                      // fan boʻyicha sinfdagi oʻrin (ixtiyoriy)
   ],
+  "reyting": {                                      // faqat shu oʻquvchining oʻrni, boshqalarning ismi yoʻq
+    "sinf": { "orin": 14, "jami": 24, "oldingi_oy_orin": 17, "guruh": "Oʻrta guruh" },
+    "parallel": { "nom": "5-sinflar", "orin": 38, "jami": 71 },
+    "izoh": "oʻrinni tushuntirish", "tavsiya": "reytingdan kelib chiqadigan tavsiya"
+  },
   "davomat": { "otilgan_darslar": 121, "qoldirilgan": 4, "kechikkan": 0, "kasal": 0, "izoh": "…" },
   "haftalik_ballar": [ { "nom": "Uy vazifasi", "qiymat": "7.8 / 10" } ],
   "progress_imtihonlar": [ { "fan": "Matematika", "sana": "2026-09-25", "turi": "Test", "natija": 4, "maksimal": 5 } ],
+  "salomatlik": {                                   // maʼlumot boʻlmasa — kalitni qoʻymang
+    "olchov": { "sana": "2026-09-10", "boy_sm": 142, "vazn_kg": 36, "bmi": 17.9 },
+    "tibbiy_xona_tashriflari": 1, "kasallik_varaqalari": 0,
+    "korik": [ { "mutaxassis": "Okulist", "sana": "2026-09-12", "xulosa": "…" } ],
+    "izoh": "…", "tavsiya": "…"
+  },
   "kuchli_tomonlar": [ { "sarlavha": "…", "tafsilot": "raqam bilan" } ],
   "kamchiliklar":    [ { "sarlavha": "…", "tafsilot": "raqam bilan" } ],
+  "qobiliyatlar": {                                 // motivatsion boʻlim: qobiliyat → jamiyatga hissa
+    "kirish": "1–2 gap",
+    "royxat": [ { "kuch": "Yaratish kuchi", "qobiliyat": "Texnik fikrlash",
+                  "asos": "IT va robototexnika — 5.00, sinfda 1-oʻrin", "hissa": "1–2 gap" } ],
+    "xulosa": "bitta ilhomlantiruvchi jumla"
+  },
   "tavsiyalar": [ { "kimga": "Ota-onaga | Oʻquvchiga | Maktab tomonidan", "matn": "…" } ],
   "keyingi_oy_maqsadlari": [ "…" ],
   "qoshimcha": [ { "sarlavha": "Olimpiada", "matn": "…" } ],

@@ -1,28 +1,97 @@
 {
   "namuna": true,
   "maktab": "Natija maktabi",
-  "davr": { "oy": "Sentabr", "yil": 2026, "boshlanish": "2026-09-01", "tugash": "2026-09-30" },
+  "davr": {
+    "oy": "Sentabr",
+    "yil": 2026,
+    "boshlanish": "2026-09-01",
+    "tugash": "2026-09-30"
+  },
   "oquvchi": {
     "ism": "Namunaviy Oʻquvchi",
     "sinf": "5-A",
     "sinf_rahbari": "Sinf rahbari F.I.Sh.",
     "tutor": "Tyutor F.I.Sh."
   },
-  "ota_ona": { "ism": "ota-ona" },
+  "ota_ona": {
+    "ism": "ota-ona"
+  },
   "korsatkichlar": [
-    { "nom": "Oʻrtacha baho", "qiymat": "4.62", "izoh": "avgustdagi 4.48 dan yuqori" },
-    { "nom": "Davomat", "qiymat": "97%", "izoh": "121 darsdan 4 tasi qoldirilgan" },
-    { "nom": "Aʼlo fanlar", "qiymat": "5", "izoh": "8 fandan 5 tasida oʻrtacha 4.5+" },
-    { "nom": "Tangalar", "qiymat": "36", "izoh": "faollik uchun olingan" }
+    {
+      "nom": "Oʻrtacha baho",
+      "qiymat": "4.62",
+      "izoh": "avgustdagi 4.48 dan yuqori"
+    },
+    {
+      "nom": "Sinfdagi oʻrni",
+      "qiymat": "14/24",
+      "izoh": "oʻtgan oy 17-oʻrin; sinf oʻrtachasi yuqori"
+    },
+    {
+      "nom": "Davomat",
+      "qiymat": "97%",
+      "izoh": "121 darsdan 4 tasi qoldirilgan"
+    },
+    {
+      "nom": "Aʼlo fanlar",
+      "qiymat": "5",
+      "izoh": "8 fandan 5 tasida oʻrtacha 4.5+"
+    }
   ],
   "umumiy_xulosa": "Sentabr oyida farzandingiz oʻqishga ishonchli kirishdi: 8 fandan 5 tasida oʻrtacha baho 4.5 dan yuqori, ayniqsa Alifbe va IT va robototexnika darslarida faol. Matematikada yaxshi natija bor, ammo uy vazifalari doim ham toʻliq bajarilmagan. Mental arifmetikada baholar kam qoʻyilgan — bu fan boʻyicha xulosa chiqarish uchun maʼlumot hali yetarli emas.",
   "fanlar": [
-    { "fan": "Alifbe", "ortacha": 4.85, "oldingi_oy": 4.7, "sinf_ortacha": 4.52, "baholar_soni": 13 },
-    { "fan": "IT va robototexnika", "ortacha": 5.0, "oldingi_oy": 4.8, "sinf_ortacha": 4.61, "baholar_soni": 4 },
-    { "fan": "Rus tili", "ortacha": 4.74, "oldingi_oy": 4.74, "sinf_ortacha": 4.4, "baholar_soni": 19 },
-    { "fan": "Matematika", "ortacha": 4.64, "oldingi_oy": 4.8, "sinf_ortacha": 4.35, "baholar_soni": 14, "izoh": "Uy vazifasi ballari pasaygan" },
-    { "fan": "Mental arifmetika", "ortacha": 4.0, "oldingi_oy": null, "sinf_ortacha": 4.2, "baholar_soni": 2, "izoh": "Faqat 2 ta baho — xulosa uchun kam" },
-    { "fan": "Jismoniy tarbiya", "ortacha": 5.0, "oldingi_oy": null, "sinf_ortacha": 4.9, "baholar_soni": 1 }
+    {
+      "fan": "Alifbe",
+      "ortacha": 4.85,
+      "oldingi_oy": 4.7,
+      "sinf_ortacha": 4.52,
+      "baholar_soni": 13,
+      "orin": 4,
+      "jami": 24
+    },
+    {
+      "fan": "IT va robototexnika",
+      "ortacha": 5.0,
+      "oldingi_oy": 4.8,
+      "sinf_ortacha": 4.61,
+      "baholar_soni": 4,
+      "orin": 1,
+      "jami": 24
+    },
+    {
+      "fan": "Rus tili",
+      "ortacha": 4.74,
+      "oldingi_oy": 4.74,
+      "sinf_ortacha": 4.4,
+      "baholar_soni": 19,
+      "orin": 6,
+      "jami": 24
+    },
+    {
+      "fan": "Matematika",
+      "ortacha": 4.64,
+      "oldingi_oy": 4.8,
+      "sinf_ortacha": 4.35,
+      "baholar_soni": 14,
+      "izoh": "Uy vazifasi ballari pasaygan",
+      "orin": 15,
+      "jami": 24
+    },
+    {
+      "fan": "Mental arifmetika",
+      "ortacha": 4.0,
+      "oldingi_oy": null,
+      "sinf_ortacha": 4.2,
+      "baholar_soni": 2,
+      "izoh": "Faqat 2 ta baho — xulosa uchun kam"
+    },
+    {
+      "fan": "Jismoniy tarbiya",
+      "ortacha": 5.0,
+      "oldingi_oy": null,
+      "sinf_ortacha": 4.9,
+      "baholar_soni": 1
+    }
   ],
   "davomat": {
     "otilgan_darslar": 121,
@@ -32,35 +101,142 @@
     "izoh": "Qoldirilgan 4 dars bir kunga toʻgʻri keladi (2026-09-18)."
   },
   "haftalik_ballar": [
-    { "nom": "Xulq-atvor", "qiymat": "9.4 / 10" },
-    { "nom": "Uy vazifasi", "qiymat": "7.8 / 10" },
-    { "nom": "Mavzuni oʻzlashtirish", "qiymat": "8.9 / 10" }
+    {
+      "nom": "Xulq-atvor",
+      "qiymat": "9.4 / 10"
+    },
+    {
+      "nom": "Uy vazifasi",
+      "qiymat": "7.8 / 10"
+    },
+    {
+      "nom": "Mavzuni oʻzlashtirish",
+      "qiymat": "8.9 / 10"
+    }
   ],
   "kuchli_tomonlar": [
-    { "sarlavha": "Oʻqish va yozuvda barqaror natija", "tafsilot": "Alifbe boʻyicha 13 ta bahoning 11 tasi — 5." },
-    { "sarlavha": "Texnologiyaga qiziqish", "tafsilot": "IT va robototexnika darslarida barcha topshiriqlar aʼlo bajarilgan." },
-    { "sarlavha": "Intizom", "tafsilot": "Oy davomida birorta kechikish yoʻq." }
+    {
+      "sarlavha": "Oʻqish va yozuvda barqaror natija",
+      "tafsilot": "Alifbe boʻyicha 13 ta bahoning 11 tasi — 5."
+    },
+    {
+      "sarlavha": "Texnologiyaga qiziqish",
+      "tafsilot": "IT va robototexnika darslarida barcha topshiriqlar aʼlo bajarilgan."
+    },
+    {
+      "sarlavha": "Intizom",
+      "tafsilot": "Oy davomida birorta kechikish yoʻq."
+    }
   ],
   "kamchiliklar": [
-    { "sarlavha": "Matematikadan uy vazifalari", "tafsilot": "Oʻrtacha baho 4.80 dan 4.64 ga tushgan; haftalik uy vazifasi bali 7.8 / 10." },
-    { "sarlavha": "Mental arifmetika boʻyicha maʼlumot kam", "tafsilot": "Oy davomida faqat 2 ta baho qoʻyilgan — oʻqituvchi bilan suhbat tavsiya etiladi." }
+    {
+      "sarlavha": "Matematikadan uy vazifalari",
+      "tafsilot": "Oʻrtacha baho 4.80 dan 4.64 ga tushgan; haftalik uy vazifasi bali 7.8 / 10."
+    },
+    {
+      "sarlavha": "Mental arifmetika boʻyicha maʼlumot kam",
+      "tafsilot": "Oy davomida faqat 2 ta baho qoʻyilgan — oʻqituvchi bilan suhbat tavsiya etiladi."
+    }
   ],
   "tavsiyalar": [
-    { "kimga": "Ota-onaga", "matn": "Har kuni kechqurun 20–30 daqiqa matematika uy vazifasini birga koʻrib chiqing." },
-    { "kimga": "Ota-onaga", "matn": "Farzandingizning robototexnikaga qiziqishini ragʻbatlantiring: uyda oddiy konstruktor yoki dasturlash oʻyini foydali." },
-    { "kimga": "Oʻquvchiga", "matn": "Uy vazifasini darsdan keyin shu kuni bajarish odatini shakllantirish." },
-    { "kimga": "Maktab tomonidan", "matn": "Matematika oʻqituvchisi oktabr oyida haftasiga bir marta qoʻshimcha mashgʻulotga taklif qiladi." }
+    {
+      "kimga": "Ota-onaga",
+      "matn": "Har kuni kechqurun 20–30 daqiqa matematika uy vazifasini birga koʻrib chiqing."
+    },
+    {
+      "kimga": "Ota-onaga",
+      "matn": "Sinfda 14-oʻrinda — bu yomon emas, sinf kuchli. Farzandingizni boshqalar bilan emas, oʻtgan oyi bilan solishtiring: 17-oʻrindan 14-oʻringa koʻtarilgani uchun maqtang."
+    },
+    {
+      "kimga": "Ota-onaga",
+      "matn": "Farzandingizning robototexnikaga qiziqishini ragʻbatlantiring: uyda oddiy konstruktor yoki dasturlash oʻyini foydali."
+    },
+    {
+      "kimga": "Oʻquvchiga",
+      "matn": "Uy vazifasini darsdan keyin shu kuni bajarish odatini shakllantirish."
+    },
+    {
+      "kimga": "Maktab tomonidan",
+      "matn": "Matematika oʻqituvchisi oktabr oyida haftasiga bir marta qoʻshimcha mashgʻulotga taklif qiladi."
+    }
   ],
   "keyingi_oy_maqsadlari": [
     "Matematikadan oʻrtacha bahoni 4.8 ga qaytarish",
     "Uy vazifasi haftalik balini 9 / 10 ga yetkazish",
     "Davomatni 100% ga yetkazish"
   ],
-  "imzo": { "sana": "2026-10-03" },
+  "imzo": {
+    "sana": "2026-10-03"
+  },
   "manbalar": [
     "Durbin: baholar (assessments), 2026-09-01 — 2026-09-30",
     "Durbin: davomat (attendances), shu davr",
     "Durbin: haftalik ballar (student_scores), sentabr",
+    "Durbin: sinf ichidagi oʻrin (24 oʻquvchi, oylik oʻrtacha baho boʻyicha)",
+    "Durbin: tibbiyot xonasi va koʻrik qaydlari",
     "Ushbu fayl — namuna, raqamlar maketni koʻrsatish uchun"
-  ]
+  ],
+  "reyting": {
+    "sinf": {
+      "orin": 14,
+      "jami": 24,
+      "oldingi_oy_orin": 17,
+      "guruh": "Oʻrta guruh"
+    },
+    "parallel": {
+      "nom": "5-sinflar",
+      "orin": 38,
+      "jami": 71
+    },
+    "izoh": "Sinfda oʻrtacha baho yuqori (4.52), shuning uchun 4.62 bilan 14-oʻrin. IT va robototexnikada sinfda birinchi, Alifbeda 4-oʻrinda; Matematikada esa 15-oʻrin — umumiy oʻrinni aynan shu fan pastga tortyapti.",
+    "tavsiya": "Matematikani sinf oʻrtachasiga (4.35 dan yuqori, 10-oʻringacha) koʻtarish umumiy oʻrinni yuqori uchlikka olib chiqadi. IT va robototexnikadagi birinchi oʻrinni toʻgarak yoki tanlov orqali mustahkamlang."
+  },
+  "salomatlik": {
+    "olchov": {
+      "sana": "2026-09-10",
+      "boy_sm": 142,
+      "vazn_kg": 36,
+      "bmi": 17.9
+    },
+    "tibbiy_xona_tashriflari": 1,
+    "kasallik_varaqalari": 0,
+    "korik": [
+      {
+        "mutaxassis": "Okulist",
+        "sana": "2026-09-12",
+        "xulosa": "Koʻrish normada"
+      },
+      {
+        "mutaxassis": "Ortoped",
+        "sana": "2026-09-12",
+        "xulosa": "Qomatga eʼtibor tavsiya etilgan"
+      }
+    ],
+    "izoh": "18-sentabrda bosh ogʻrigʻi bilan tibbiyot xonasiga murojaat qilgan, oʻsha kuni darslarni qoldirgan.",
+    "tavsiya": "Uy vazifasini bajarishda stol va stul balandligiga eʼtibor bering; ortoped tavsiyasi boʻyicha shifokorga koʻrinish foydali."
+  },
+  "qobiliyatlar": {
+    "kirish": "Bir oylik baholar farzandingizda quyidagi qobiliyatlar rivojlanib kelayotganini koʻrsatyapti. Ularni qoʻllab-quvvatlasak, kelajakda jamiyat uchun foydali kuchga aylanadi.",
+    "royxat": [
+      {
+        "kuch": "Yaratish kuchi",
+        "qobiliyat": "Texnik va konstruktorlik fikrlash",
+        "asos": "IT va robototexnika — 5.00, sinfda 1-oʻrin",
+        "hissa": "Bu qobiliyat muhandislik, dasturlash va robototexnikada asqotadi — odamlar hayotini yengillashtiradigan qurilma va dasturlar yaratishga olib boradi."
+      },
+      {
+        "kuch": "Bilim kuchi",
+        "qobiliyat": "Til va nutq madaniyati",
+        "asos": "Alifbe — 4.85, Rus tili — 4.74",
+        "hissa": "Fikrini aniq va chiroyli ifoda etgan inson jamoani ortidan ergashtira oladi: oʻqituvchi, jurnalist, diplomat yoki rahbar sifatida."
+      },
+      {
+        "kuch": "Iroda kuchi",
+        "qobiliyat": "Intizom va masʼuliyat",
+        "asos": "Oy davomida birorta kechikish yoʻq, xulq bali 9.4 / 10",
+        "hissa": "Har qanday kasbda ishonchli inson boʻlish shu fazilatdan boshlanadi — bunday insonlarga katta ishlar ishonib topshiriladi."
+      }
+    ],
+    "xulosa": "Natija niyat va intizomdan boshlanadi — farzandingizda ikkalasi ham bor."
+  }
 }

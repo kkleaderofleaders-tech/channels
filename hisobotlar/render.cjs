@@ -117,8 +117,9 @@ function render(r) {
   // Fanlar
   if (has(r.fanlar)) {
     const anyClass = r.fanlar.some((f) => f.sinf_ortacha !== undefined && f.sinf_ortacha !== null);
+    const anyRank = r.fanlar.some((f) => f.orin != null && f.jami != null);
     out.push(`<section class="section">${sectionHead(++n, 'Fanlar boʻyicha natijalar')}
-<table><thead><tr><th>Fan</th><th class="num">Oʻrtacha</th><th style="width:34mm">5 ballik shkala</th><th class="num">Oʻtgan oy</th>${anyClass ? '<th class="num">Sinf</th>' : ''}<th class="num">Baholar</th><th>Holat</th></tr></thead><tbody>`);
+<table><thead><tr><th>Fan</th><th class="num">Oʻrtacha</th><th style="width:34mm">5 ballik shkala</th><th class="num">Oʻtgan oy</th>${anyClass ? '<th class="num">Sinf</th>' : ''}${anyRank ? '<th class="num">Sinfda oʻrin</th>' : ''}<th class="num">Baholar</th><th>Holat</th></tr></thead><tbody>`);
     for (const f of r.fanlar) {
       const pct = Math.max(0, Math.min(100, (Number(f.ortacha) / 5) * 100));
       const mark = f.sinf_ortacha != null ? `<span class="bar__mark" style="left:calc(${(Number(f.sinf_ortacha) / 5) * 100}% - 1px)"></span>` : '';
@@ -128,12 +129,43 @@ function render(r) {
   <td><div class="bar"><span class="bar__fill" style="width:${pct}%"></span>${mark}</div></td>
   <td class="num">${delta(f.ortacha, f.oldingi_oy)}</td>
   ${anyClass ? `<td class="num muted">${fmtGrade(f.sinf_ortacha)}</td>` : ''}
+  ${anyRank ? `<td class="num">${f.orin != null && f.jami != null ? `<b>${esc(f.orin)}</b><span class="muted"> / ${esc(f.jami)}</span>` : '<span class="muted">—</span>'}</td>` : ''}
   <td class="num muted">${esc(f.baholar_soni ?? '—')}</td>
   <td>${gradeStatus(f.ortacha)}</td>
 </tr>`);
     }
     out.push(`</tbody></table>
 <div class="legend"><span><i class="sw-fill"></i>Farzandingizning oʻrtacha bahosi</span>${anyClass ? '<span><i class="sw-mark"></i>Sinf oʻrtachasi</span>' : ''}<span>Baholar — oy davomida qoʻyilgan baholar soni</span></div>
+</section>`);
+  }
+
+  // Sinfdagi oʻrin (reyting) — faqat shu oʻquvchining oʻrni, boshqalarning ismi yoʻq
+  const rt = r.reyting;
+  if (rt && rt.sinf && rt.sinf.orin != null && rt.sinf.jami) {
+    const s1 = rt.sinf;
+    const dots = Array.from({ length: Math.min(Number(s1.jami), 60) }, (_, i) =>
+      `<span class="rank-dot${i + 1 === Number(s1.orin) ? ' rank-dot--me' : ''}"></span>`).join('');
+    const prev = s1.oldingi_oy_orin != null
+      ? (Number(s1.oldingi_oy_orin) > Number(s1.orin) ? `▲ oʻtgan oy ${esc(s1.oldingi_oy_orin)}-oʻrin`
+        : Number(s1.oldingi_oy_orin) < Number(s1.orin) ? `▼ oʻtgan oy ${esc(s1.oldingi_oy_orin)}-oʻrin` : 'oʻtgan oy ham shu oʻrin')
+      : '';
+    out.push(`<section class="section avoid-break">${sectionHead(++n, 'Sinfdagi oʻrni')}
+<div class="rank">
+  <div class="rank__main card card--inverse">
+    <p class="card__eyebrow">${esc(o.sinf ? `${o.sinf} sinf` : 'Sinf')} · oylik oʻrtacha baho boʻyicha</p>
+    <p class="rank__value">${esc(s1.orin)}<span> / ${esc(s1.jami)}</span></p>
+    ${s1.guruh ? `<p class="rank__group">${esc(s1.guruh)}</p>` : ''}
+    ${prev ? `<p class="small" style="margin-top:6px">${prev}</p>` : ''}
+  </div>
+  <div class="rank__side">
+    <div class="rank-strip" aria-hidden="true">${dots}</div>
+    <p class="small muted rank-strip__legend"><span>1-oʻrin</span><span>${esc(s1.jami)}-oʻrin</span></p>
+    ${rt.parallel && rt.parallel.orin != null ? `<p class="small" style="margin-top:8px"><b>${esc(rt.parallel.nom || 'Parallel sinflar')}:</b> ${esc(rt.parallel.orin)} / ${esc(rt.parallel.jami)}</p>` : ''}
+    ${rt.izoh ? `<p style="margin-top:8px">${esc(rt.izoh)}</p>` : ''}
+    ${rt.tavsiya ? `<p class="rank__advice"><b>Tavsiya:</b> ${esc(rt.tavsiya)}</p>` : ''}
+  </div>
+</div>
+<p class="small muted" style="margin-top:6px">Reytingda boshqa oʻquvchilarning ismi va natijasi koʻrsatilmaydi.</p>
 </section>`);
   }
 
@@ -168,6 +200,26 @@ ${ws.map((w) => `<dt>${esc(w.nom)}</dt><dd>${esc(w.qiymat)}</dd>`).join('\n')}</
     out.push('</section>');
   }
 
+  // Salomatlik (maktab tibbiyot xonasi maʼlumotlari)
+  const h = r.salomatlik;
+  if (h) {
+    const m = h.olchov || {};
+    const rows = [];
+    if (m.boy_sm != null) rows.push(['Boʻyi', `${esc(m.boy_sm)} sm`]);
+    if (m.vazn_kg != null) rows.push(['Vazni', `${esc(m.vazn_kg)} kg`]);
+    if (m.bmi != null) rows.push(['Tana massasi indeksi', esc(m.bmi)]);
+    if (h.tibbiy_xona_tashriflari != null) rows.push(['Tibbiyot xonasiga murojaat (oy)', esc(h.tibbiy_xona_tashriflari)]);
+    if (h.kasallik_varaqalari != null) rows.push(['Kasallik varaqalari (oy)', esc(h.kasallik_varaqalari)]);
+    out.push(`<section class="section avoid-break">${sectionHead(++n, 'Salomatlik')}<div class="grid-2">
+<div class="card card--raised"><p class="card__eyebrow">Koʻrsatkichlar${m.sana ? ` · oʻlchov ${esc(m.sana)}` : ''}</p>
+<dl class="kv">${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl></div>
+<div class="card card--outline"><p class="card__eyebrow">${has(h.korik) ? 'Mutaxassislar koʻrigi' : 'Izoh'}</p>
+${has(h.korik) ? `<ul class="list">${h.korik.map((k) => `<li><b>${esc(k.mutaxassis)}</b>${k.sana ? ` <span class="small muted">· ${esc(k.sana)}</span>` : ''}<span class="detail">${esc(k.xulosa)}</span></li>`).join('')}</ul>` : ''}
+${h.izoh ? `<p${has(h.korik) ? ' style="margin-top:10px"' : ''}>${esc(h.izoh)}</p>` : ''}
+${h.tavsiya ? `<p class="rank__advice"><b>Tavsiya:</b> ${esc(h.tavsiya)}</p>` : ''}
+</div></div></section>`);
+  }
+
   // Kuchli tomonlar va kamchiliklar
   const item = (x) => (typeof x === 'string'
     ? `<li>${esc(x)}</li>`
@@ -177,6 +229,24 @@ ${ws.map((w) => `<dt>${esc(w.nom)}</dt><dd>${esc(w.qiymat)}</dd>`).join('\n')}</
     if (has(r.kuchli_tomonlar)) out.push(`<div class="card card--raised"><p class="card__eyebrow">Kuchli tomonlar</p><ul class="list">${r.kuchli_tomonlar.map(item).join('')}</ul></div>`);
     if (has(r.kamchiliklar)) out.push(`<div class="card card--outline"><p class="card__eyebrow">Eʼtibor kerak</p><ul class="list">${r.kamchiliklar.map(item).join('')}</ul></div>`);
     out.push('</div></section>');
+  }
+
+  // Qobiliyatlar va kelajak — motivatsion boʻlim
+  const qb = r.qobiliyatlar;
+  if (qb && has(qb.royxat)) {
+    const cols = Math.min(qb.royxat.length, 3);
+    out.push(`<section class="section">${sectionHead(++n, 'Qobiliyatlar va kelajak')}
+${qb.kirish ? `<p class="lead" style="margin-bottom:12px">${esc(qb.kirish)}</p>` : ''}
+<div class="abilities" style="grid-template-columns:repeat(${cols},1fr)">
+${qb.royxat.map((a) => `<div class="card card--raised ability">
+  ${a.kuch ? `<p class="card__eyebrow">${esc(a.kuch)}</p>` : ''}
+  <h3 class="card__title">${esc(a.qobiliyat)}</h3>
+  ${a.asos ? `<p class="small muted ability__basis">Asos: ${esc(a.asos)}</p>` : ''}
+  <p class="ability__contribution">${esc(a.hissa)}</p>
+</div>`).join('\n')}
+</div>
+${qb.xulosa ? `<p class="ability__closing">${esc(qb.xulosa)}</p>` : ''}
+</section>`);
   }
 
   // Tavsiyalar
