@@ -131,7 +131,7 @@ function render(r) {
   ${anyClass ? `<td class="num muted">${fmtGrade(f.sinf_ortacha)}</td>` : ''}
   ${anyRank ? `<td class="num">${f.orin != null && f.jami != null ? `<b>${esc(f.orin)}</b><span class="muted"> / ${esc(f.jami)}</span>` : '<span class="muted">—</span>'}</td>` : ''}
   <td class="num muted">${esc(f.baholar_soni ?? '—')}</td>
-  <td>${gradeStatus(f.ortacha)}</td>
+  <td>${f.baholar_soni != null && Number(f.baholar_soni) < 3 ? '<span class="tag tag--neutral">Kam baho</span>' : gradeStatus(f.ortacha)}</td>
 </tr>`);
     }
     out.push(`</tbody></table>
