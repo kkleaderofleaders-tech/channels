@@ -1,0 +1,66 @@
+{
+  "namuna": true,
+  "maktab": "Natija maktabi",
+  "davr": { "oy": "Sentabr", "yil": 2026, "boshlanish": "2026-09-01", "tugash": "2026-09-30" },
+  "oquvchi": {
+    "ism": "Namunaviy Oʻquvchi",
+    "sinf": "5-A",
+    "sinf_rahbari": "Sinf rahbari F.I.Sh.",
+    "tutor": "Tyutor F.I.Sh."
+  },
+  "ota_ona": { "ism": "ota-ona" },
+  "korsatkichlar": [
+    { "nom": "Oʻrtacha baho", "qiymat": "4.62", "izoh": "avgustdagi 4.48 dan yuqori" },
+    { "nom": "Davomat", "qiymat": "97%", "izoh": "121 darsdan 4 tasi qoldirilgan" },
+    { "nom": "Aʼlo fanlar", "qiymat": "5", "izoh": "8 fandan 5 tasida oʻrtacha 4.5+" },
+    { "nom": "Tangalar", "qiymat": "36", "izoh": "faollik uchun olingan" }
+  ],
+  "umumiy_xulosa": "Sentabr oyida farzandingiz oʻqishga ishonchli kirishdi: 8 fandan 5 tasida oʻrtacha baho 4.5 dan yuqori, ayniqsa Alifbe va IT va robototexnika darslarida faol. Matematikada yaxshi natija bor, ammo uy vazifalari doim ham toʻliq bajarilmagan. Mental arifmetikada baholar kam qoʻyilgan — bu fan boʻyicha xulosa chiqarish uchun maʼlumot hali yetarli emas.",
+  "fanlar": [
+    { "fan": "Alifbe", "ortacha": 4.85, "oldingi_oy": 4.7, "sinf_ortacha": 4.52, "baholar_soni": 13 },
+    { "fan": "IT va robototexnika", "ortacha": 5.0, "oldingi_oy": 4.8, "sinf_ortacha": 4.61, "baholar_soni": 4 },
+    { "fan": "Rus tili", "ortacha": 4.74, "oldingi_oy": 4.74, "sinf_ortacha": 4.4, "baholar_soni": 19 },
+    { "fan": "Matematika", "ortacha": 4.64, "oldingi_oy": 4.8, "sinf_ortacha": 4.35, "baholar_soni": 14, "izoh": "Uy vazifasi ballari pasaygan" },
+    { "fan": "Mental arifmetika", "ortacha": 4.0, "oldingi_oy": null, "sinf_ortacha": 4.2, "baholar_soni": 2, "izoh": "Faqat 2 ta baho — xulosa uchun kam" },
+    { "fan": "Jismoniy tarbiya", "ortacha": 5.0, "oldingi_oy": null, "sinf_ortacha": 4.9, "baholar_soni": 1 }
+  ],
+  "davomat": {
+    "otilgan_darslar": 121,
+    "qoldirilgan": 4,
+    "kechikkan": 0,
+    "kasal": 0,
+    "izoh": "Qoldirilgan 4 dars bir kunga toʻgʻri keladi (2026-09-18)."
+  },
+  "haftalik_ballar": [
+    { "nom": "Xulq-atvor", "qiymat": "9.4 / 10" },
+    { "nom": "Uy vazifasi", "qiymat": "7.8 / 10" },
+    { "nom": "Mavzuni oʻzlashtirish", "qiymat": "8.9 / 10" }
+  ],
+  "kuchli_tomonlar": [
+    { "sarlavha": "Oʻqish va yozuvda barqaror natija", "tafsilot": "Alifbe boʻyicha 13 ta bahoning 11 tasi — 5." },
+    { "sarlavha": "Texnologiyaga qiziqish", "tafsilot": "IT va robototexnika darslarida barcha topshiriqlar aʼlo bajarilgan." },
+    { "sarlavha": "Intizom", "tafsilot": "Oy davomida birorta kechikish yoʻq." }
+  ],
+  "kamchiliklar": [
+    { "sarlavha": "Matematikadan uy vazifalari", "tafsilot": "Oʻrtacha baho 4.80 dan 4.64 ga tushgan; haftalik uy vazifasi bali 7.8 / 10." },
+    { "sarlavha": "Mental arifmetika boʻyicha maʼlumot kam", "tafsilot": "Oy davomida faqat 2 ta baho qoʻyilgan — oʻqituvchi bilan suhbat tavsiya etiladi." }
+  ],
+  "tavsiyalar": [
+    { "kimga": "Ota-onaga", "matn": "Har kuni kechqurun 20–30 daqiqa matematika uy vazifasini birga koʻrib chiqing." },
+    { "kimga": "Ota-onaga", "matn": "Farzandingizning robototexnikaga qiziqishini ragʻbatlantiring: uyda oddiy konstruktor yoki dasturlash oʻyini foydali." },
+    { "kimga": "Oʻquvchiga", "matn": "Uy vazifasini darsdan keyin shu kuni bajarish odatini shakllantirish." },
+    { "kimga": "Maktab tomonidan", "matn": "Matematika oʻqituvchisi oktabr oyida haftasiga bir marta qoʻshimcha mashgʻulotga taklif qiladi." }
+  ],
+  "keyingi_oy_maqsadlari": [
+    "Matematikadan oʻrtacha bahoni 4.8 ga qaytarish",
+    "Uy vazifasi haftalik balini 9 / 10 ga yetkazish",
+    "Davomatni 100% ga yetkazish"
+  ],
+  "imzo": { "sana": "2026-10-03" },
+  "manbalar": [
+    "Durbin: baholar (assessments), 2026-09-01 — 2026-09-30",
+    "Durbin: davomat (attendances), shu davr",
+    "Durbin: haftalik ballar (student_scores), sentabr",
+    "Ushbu fayl — namuna, raqamlar maketni koʻrsatish uchun"
+  ]
+}

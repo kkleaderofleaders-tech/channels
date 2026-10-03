@@ -1,0 +1,5 @@
+hisobotlar/chiqish/
+hisobotlar/manbalar/*
+!hisobotlar/manbalar/.gitkeep
+hisobotlar/**/*.html
+node_modules/
