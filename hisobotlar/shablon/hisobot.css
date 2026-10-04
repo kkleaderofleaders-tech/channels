@@ -1,0 +1,199 @@
+/* Natija maktabi — oylik hisobot (A4) uslublari.
+   Manba: "Natija maktabi" dizayn tizimi (tokens.json). Brend tekis: soya va gradient yoʻq.
+   Toʻrtta rang: Honor Roll #dd1717, Blank Page #ffffff, Blackout Exam #070707, Recess Bell #ff4a4a. */
+
+@font-face { font-family: "Geist"; font-weight: 400; src: url("../brand/fonts/Geist-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Geist"; font-weight: 500; src: url("../brand/fonts/Geist-Medium.woff2") format("woff2"); }
+@font-face { font-family: "Geist"; font-weight: 700; src: url("../brand/fonts/Geist-Bold.woff2") format("woff2"); }
+
+:root {
+  --brand-red: #dd1717;
+  --brand-red-light: #ff4a4a;
+  --brand-white: #ffffff;
+  --brand-black: #070707;
+  --surface: #ffffff;
+  --surface-raised: #f4f4f4;
+  --surface-brand: #dd1717;
+  --surface-inverse: #070707;
+  --ink: #070707;
+  --ink-muted: #5a5a5a;
+  --ink-brand: #dd1717;
+  --ink-on-brand: #ffffff;
+  --ink-inverse: #ffffff;
+  --border: #dcdcdc;
+  --border-strong: #070707;
+  --font-sans: Geist, Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px;
+  --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --radius-sm: 6px; --radius-md: 12px; --radius-lg: 20px; --radius-full: 9999px;
+  --page-x: 14mm;
+}
+
+@page { size: A4; margin: 14mm var(--page-x) 16mm; }
+@page :first { margin-top: 0; }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--surface); color: var(--ink); }
+body {
+  font-family: var(--font-sans); font-size: 10.5pt; line-height: 1.5; font-weight: 400;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+h1, h2, h3, p, ul, ol { margin: 0; }
+
+/* ---------- Muqova bloki (qizil yuza, oq logotip yuqori chap burchakda) ---------- */
+.cover {
+  position: relative; overflow: hidden;
+  margin: 0 calc(-1 * var(--page-x));
+  padding: 12mm var(--page-x) 10mm;
+  background: var(--surface-brand); color: var(--ink-on-brand);
+  min-height: 78mm;
+}
+.cover__logo { display: block; height: 15mm; width: auto; }
+.cover__burst { position: absolute; right: -34mm; top: -22mm; width: 118mm; height: auto; }
+.cover__burst path { fill: var(--brand-red-light); }
+.cover__text { position: relative; margin-top: 12mm; max-width: 120mm; }
+.overline {
+  font-size: 8.5pt; line-height: 1.3; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+}
+.cover__name { margin-top: var(--space-2); font-size: 28pt; line-height: 1.05; font-weight: 700; letter-spacing: -.01em; }
+.cover__meta { margin-top: var(--space-3); font-size: 11pt; line-height: 1.4; font-weight: 500; }
+.cover__tag {
+  display: inline-block; margin-top: var(--space-3); padding: 2px var(--space-2);
+  border-radius: var(--radius-sm); background: var(--brand-white); color: var(--brand-red);
+  font-size: 8pt; font-weight: 500; letter-spacing: .06em; text-transform: uppercase;
+}
+
+/* ---------- Boʻlimlar ---------- */
+.section { margin-top: 7mm; }
+.section--tight { margin-top: 6mm; }
+.section__head { display: flex; align-items: baseline; gap: var(--space-3); margin-bottom: var(--space-3); break-after: avoid; }
+.section__num { font-size: 8.5pt; font-weight: 500; letter-spacing: .08em; color: var(--ink-brand); }
+.section__title { font-size: 15pt; line-height: 1.2; font-weight: 700; }
+.lead { font-size: 11.5pt; line-height: 1.55; }
+.muted { color: var(--ink-muted); }
+.small { font-size: 8.5pt; line-height: 1.4; }
+
+/* ---------- Statistika pufakchalari (≤4, turli oʻlchamda, bir-biriga tegib turadi) ---------- */
+.stats { display: flex; align-items: center; margin-top: 8mm; break-inside: avoid; }
+.stat {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+  border-radius: var(--radius-full); padding: var(--space-3); flex: none;
+}
+.stat + .stat { margin-left: -3mm; }
+.stat--brand { background: var(--brand-red); color: var(--brand-white); }
+.stat--light { background: var(--brand-red-light); color: var(--brand-black); }
+.stat--inverse { background: var(--surface-inverse); color: var(--ink-inverse); }
+.stat--paper { background: var(--brand-white); color: var(--brand-red); box-shadow: inset 0 0 0 2px var(--brand-red); }
+.stat__value { font-weight: 700; line-height: 1; }
+.stat__label { margin-top: 3px; font-size: 7.5pt; line-height: 1.25; font-weight: 500; max-width: 80%; }
+.stats__notes { margin-left: var(--space-5); display: grid; gap: var(--space-2); }
+.stats__note { font-size: 8.5pt; line-height: 1.35; color: var(--ink-muted); }
+.stats__note b { color: var(--ink); font-weight: 500; }
+
+/* ---------- Fanlar jadvali ---------- */
+table { width: 100%; border-collapse: collapse; }
+thead th {
+  text-align: left; font-size: 8pt; font-weight: 500; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ink-muted); padding: 0 var(--space-2) var(--space-2); border-bottom: 2px solid var(--border-strong);
+}
+tbody td { padding: 7px var(--space-2); border-bottom: 1px solid var(--border); vertical-align: middle; }
+tbody tr { break-inside: avoid; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.subject { font-weight: 500; }
+.bar { position: relative; height: 8px; border-radius: var(--radius-full); background: var(--surface-raised); min-width: 30mm; }
+.bar__fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: var(--radius-full); background: var(--brand-red); }
+.bar__mark { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--brand-black); }
+.delta { font-size: 8.5pt; white-space: nowrap; }
+.delta--down { color: var(--ink-brand); font-weight: 500; }
+.tag {
+  display: inline-block; padding: 1px 6px; border-radius: var(--radius-sm);
+  font-size: 7pt; line-height: 1.5; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap;
+}
+.tag--brand { background: var(--brand-red); color: var(--brand-white); }
+.tag--neutral { background: var(--surface-raised); color: var(--ink); }
+.tag--inverse { background: var(--surface-inverse); color: var(--ink-inverse); }
+.legend { margin-top: var(--space-2); font-size: 8pt; color: var(--ink-muted); display: flex; gap: var(--space-4); }
+.legend i { display: inline-block; vertical-align: middle; margin-right: 4px; }
+.legend .sw-fill { width: 14px; height: 6px; border-radius: 3px; background: var(--brand-red); }
+.legend .sw-mark { width: 2px; height: 10px; background: var(--brand-black); }
+.row-note { display: block; font-size: 8pt; line-height: 1.35; color: var(--ink-muted); font-weight: 400; margin-top: 1px; }
+
+/* ---------- Kartochkalar ---------- */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+.card { padding: var(--space-5); border-radius: var(--radius-lg); break-inside: avoid; }
+.card--raised { background: var(--surface-raised); }
+.card--outline { background: var(--surface); box-shadow: inset 0 0 0 2px var(--border); }
+.card--brand { background: var(--surface-brand); color: var(--ink-on-brand); }
+.card--inverse { background: var(--surface-inverse); color: var(--ink-inverse); }
+.card__eyebrow { font-size: 8pt; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; margin-bottom: var(--space-2); }
+.card--raised .card__eyebrow, .card--outline .card__eyebrow { color: var(--ink-brand); }
+.card__title { font-size: 12.5pt; line-height: 1.25; font-weight: 700; margin-bottom: var(--space-3); }
+
+.kv { display: grid; grid-template-columns: 1fr auto; row-gap: 6px; column-gap: var(--space-4); }
+.kv dt { color: var(--ink-muted); }
+.kv dd { margin: 0; text-align: right; font-weight: 500; font-variant-numeric: tabular-nums; }
+.kv--big dd { font-size: 13pt; font-weight: 700; }
+
+.list { list-style: none; padding: 0; display: grid; gap: var(--space-3); }
+.list li { position: relative; padding-left: 18px; }
+.list li::before {
+  content: ""; position: absolute; left: 0; top: .5em; width: 8px; height: 8px; border-radius: var(--radius-full);
+  background: var(--brand-red);
+}
+.card--brand .list li::before { background: var(--brand-white); }
+.list b { font-weight: 700; }
+.list .detail { display: block; margin-top: 2px; }
+.card--outline .list .detail, .card--raised .list .detail { color: var(--ink-muted); }
+
+/* Tavsiyalar — kimga qaratilgani boʻyicha guruh */
+.recs { display: grid; gap: var(--space-3); }
+.rec-group { display: grid; grid-template-columns: 34mm 1fr; gap: var(--space-4); padding-top: var(--space-3); border-top: 1px solid var(--border); break-inside: avoid; }
+.rec-group:first-child { border-top: 2px solid var(--border-strong); }
+.rec-group__who { font-size: 11pt; font-weight: 700; }
+.rec-group__who span { display: block; font-size: 8pt; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-brand); margin-bottom: 2px; }
+.recs ol { padding-left: 1.2em; display: grid; gap: var(--space-2); }
+.recs ol li::marker { color: var(--ink-brand); font-weight: 700; }
+
+/* Maqsadlar — qizil yuza, faqat oq matn */
+.goals ol { padding-left: 0; list-style: none; counter-reset: g; display: grid; gap: var(--space-3); }
+.goals li { counter-increment: g; display: grid; grid-template-columns: 9mm 1fr; align-items: baseline; }
+.goals li::before { content: counter(g, decimal-leading-zero); font-weight: 700; font-size: 12pt; }
+
+/* Imzo va manbalar */
+.signoff { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); margin-top: var(--space-6); break-inside: avoid; }
+.sign__line { border-bottom: 1px solid var(--border-strong); height: 12mm; }
+.sign__who { margin-top: var(--space-2); font-size: 8.5pt; color: var(--ink-muted); }
+.sign__who b { display: block; color: var(--ink); font-weight: 500; font-size: 9.5pt; }
+.sources { margin-top: var(--space-4); padding-top: var(--space-3); border-top: 1px solid var(--border); font-size: 7.5pt; line-height: 1.45; color: var(--ink-muted); break-inside: avoid; }
+.sources b { color: var(--ink); font-weight: 500; }
+
+/* Yakuniy blok: bir qatorli logotip quyi chap burchakda */
+.closing { display: flex; justify-content: space-between; align-items: flex-end; margin-top: var(--space-4); break-inside: avoid; }
+.closing__logo { height: 7mm; width: auto; }
+.closing__motto { font-size: 9pt; font-weight: 500; color: var(--ink-muted); }
+
+.avoid-break { break-inside: avoid; }
+
+/* ---------- Sinfdagi oʻrni (reyting) ---------- */
+.rank { display: grid; grid-template-columns: 58mm 1fr; gap: var(--space-5); align-items: start; }
+.rank__value { font-size: 34pt; line-height: 1; font-weight: 700; margin-top: var(--space-2); }
+.rank__value span { font-size: 14pt; font-weight: 500; color: #b4b4b4; }
+.rank__group {
+  display: inline-block; margin-top: var(--space-3); padding: 1px 6px; border-radius: var(--radius-sm);
+  background: var(--brand-white); color: var(--brand-black);
+  font-size: 7.5pt; font-weight: 500; letter-spacing: .04em; text-transform: uppercase;
+}
+.rank-strip { display: flex; flex-wrap: wrap; gap: 4px; margin-top: var(--space-2); }
+.rank-dot { width: 9px; height: 9px; border-radius: var(--radius-full); background: var(--border); }
+.rank-dot--me { background: var(--brand-red); outline: 1.5px solid var(--brand-red); outline-offset: 2px; }
+.rank-strip__legend { display: flex; justify-content: space-between; margin-top: 4px; }
+.rank__advice { margin-top: var(--space-3); padding: var(--space-3) var(--space-4); border-left: 3px solid var(--brand-red); background: var(--surface-raised); border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+.rank__advice b { color: var(--ink-brand); }
+
+/* ---------- Qobiliyatlar va kelajak ---------- */
+.abilities { display: grid; gap: var(--space-4); }
+.ability { display: flex; flex-direction: column; }
+.ability .card__title { font-size: 11.5pt; margin-bottom: var(--space-2); }
+.ability__basis { margin-bottom: var(--space-2); }
+.ability__contribution { font-size: 10pt; line-height: 1.5; }
+.ability__closing { margin-top: var(--space-4); font-size: 12pt; line-height: 1.45; font-weight: 700; color: var(--ink-brand); }
